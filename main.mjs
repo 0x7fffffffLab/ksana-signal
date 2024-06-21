@@ -17,6 +17,10 @@ const io = new Server(server, {
     },
 });
 
+app.get('/ping', (req, res) => {
+    res.send('Hello!')
+})
+
 io.on("connection", (socket) => {
     socket.on("join-room", (room) => {
         socket.join(room);
